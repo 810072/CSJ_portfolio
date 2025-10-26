@@ -1,5 +1,4 @@
-// app/layout.js (수정된 코드)
-
+// app/layout.js
 import './globals.css'; 
 
 export const metadata = {
