@@ -11,7 +11,7 @@ const nextConfig = {
   basePath: `/${repoName}`,
 
   // 4. (필수) Link, Image 컴포넌트 등이 basePath를 인지하도록 설정
-  assetPrefix: `/${repoName}/`,
+  assetPrefix: `/${repoName}`,
 
   // 5. (선택) Next.js Image 태그 대신 <img> 태그 사용 시
   // (Image 태그 최적화가 정적 export에서 잘 안될 수 있음)
