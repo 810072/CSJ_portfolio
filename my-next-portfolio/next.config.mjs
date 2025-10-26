@@ -8,7 +8,7 @@ const nextConfig = {
 
   // 3. (필수) GitHub Pages 경로 설정
   // assets(JS, CSS 파일 등)을 올바른 경로에서 불러오기 위함
-  basePath: `/${repoName}`,
+  // basePath: `/${repoName}`,
 
   // 4. (필수) Link, Image 컴포넌트 등이 basePath를 인지하도록 설정
   assetPrefix: `/${repoName}`,
