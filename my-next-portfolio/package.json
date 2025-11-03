@@ -2,11 +2,11 @@
   "name": "my-next-portfolio",
   "version": "0.1.0",
   "homepage": "https://810072.github.io/CSJ_portfolio",
-  "scripts": {
+"scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
+    "deploy": "gh-pages -d out --dotfiles",
     "start": "next start"
   },
   "dependencies": {
