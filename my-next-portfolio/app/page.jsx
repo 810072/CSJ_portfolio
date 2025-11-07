@@ -26,13 +26,20 @@ export default function Home() {
         <h2>Introducing about Choi Sangjean</h2>
         <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
           About me.
-
+          <br />
           안녕하세요. 하드웨어의 특성을 이해하는 주니어 개발자 최상진입니다.
         </p>
-        <p style={{ fontSize: '15px'}}>
+        <p style={{ fontSize: '16px'}}>
           저는 서울 로봇 마이스터고에서 로봇의 기계, 전자, 제어 원리를 익히며 하드웨어와 산업 현장의 기반을 다졌습니다. 이후 대학에서 소프트웨어 컴퓨팅을 전공하며 IT 시스템 개발, 데이터 처리, 그리고 AI 모델 활용 역량을 전문적으로 길렀습니다.
 
 이러한 저의 이력은 소프트웨어를 설계할 때 하드웨어의 특성까지 고려할 수 있는 저만의 강력한 무기입니다. 하드웨어부터 AI 기반의 소프트웨어 시스템까지 모두 이해하는 융합형 인재로서, 기술로 다양한 문제를 해결하는 개발자가 되겠습니다.
+        </p>
+        <p style={{ fontSize: '18px'}}>
+          Education.
+          <br />
+          서울 로봇 마이스터고 로봇 소프트웨어 2015.03 ~ 0217.02
+          <br />
+          한경대학교 소프트웨어 서비스 컴퓨팅 학과 2022.03 ~ 2026.02 *졸업 예정
         </p>
       </motion.section>
 
@@ -82,16 +89,27 @@ export default function Home() {
           <div className="project-content">
             <h3>Memordo : 개인 메모를 활용한 인터렉티브 AI 메모앱</h3>
             <p>
-              개인 메모앱에 LLM을 결합한 프로젝트. 
+              프로젝트 설명 : 개인 메모앱에 LLM을 결합한 프로젝트. 
               각각의 문서를 임베딩하여 문서간의 유사도, 관련도를 계산하여 Graph를 만드는 기능. 
               자체 챗봇에 사용자의 메모, 문서들을 연결시켜 RAG기능을 접목. 
               범용적인 답변뿐만이 아닌 개인화된 챗봇기능을 구현.
+            </p>
+            <p>
+              포지션 : LLM 백엔드, RAG, Graph 생성 등 기능 구현.
+            <br />
+              Gemini API, Chroma DB 등을 사용하여 연관 노트 그래프 생성기능, 벡터기반 RAG 기능을 구현하였습니다.
+              <br />
+              답변 과정에서는 Gemini 2.5-flash, Re-lanking과 쿼리 변환 과정에서는 Gemini 2.5-flash-lite 를 사용하여 최대한 비용을 절감하였습니다.
+              </p>
+              <p>
+              <br />
+              현재는 NAVER CLOVA X Seed 1.5B 모델을 로컬로 서빙. 이를 쿼리 변환, Knowledge Graph-Guided Retrieval을 구현하는데에 사용하고 있습니다. 이를 통해 비용이 발생하는 외부API 호출을 최소화하는 동시에 성능개선을 시도하는 도중입니다.
             </p>
             <div>
               <span className="keyword-tag">Flutter</span>
               <span className="keyword-tag">Gemini API</span>
               <span className="keyword-tag">Python</span>
-              <span className="keyword-tag">LangChain</span>
+              <span className="keyword-tag">LangGraph</span>
               <span className="keyword-tag">RAG</span>
             </div>
           </div>
