@@ -99,7 +99,7 @@ export default function Home() {
             <br />
               Gemini API, Chroma DB 등을 사용하여 연관 노트 그래프 생성기능, 벡터기반 RAG 기능을 구현하였습니다.
               <br />
-              답변 과정에서는 Gemini 2.5-flash, Re-lanking과 쿼리 변환 과정에서는 Gemini 2.5-flash-lite 를 사용하여 최대한 비용을 절감하였습니다.
+              답변 과정에서는 Gemini 2.5-flash, Re-Ranking과 쿼리 변환 과정에서는 Gemini 2.5-flash-lite 를 사용하여 최대한 비용을 절감하였습니다.
               </p>
               <p>
               <br />
