@@ -1,16 +1,23 @@
 export const ko = {
+    hero: {
+        greeting: "Hello, I am",
+        title: "Choi Sangjean",
+        tagline: "Software Engineer",
+        description: "하드웨어의 원리부터 AI 시스템까지.\n피지컬 컴퓨팅과 인공지능을 연결하는 개발자입니다.",
+        cta: "View Projects",
+    },
     about: {
-        title: "Introducing about Choi Sangjean",
+        title: "Introducing Choi Sangjean",
         subtitle: "About me.",
-        description1: "안녕하세요. 하드웨어의 특성을 이해하는 주니어 개발자 최상진입니다.",
-        description2: "저는 서울 로봇 마이스터고에서 로봇의 기계, 전자, 제어 원리를 익히며 하드웨어와 산업 현장의 기반을 다졌습니다. 이후 대학에서 소프트웨어 컴퓨팅을 전공하며 IT 시스템 개발, 데이터 처리, 그리고 AI 모델 활용 역량을 전문적으로 길렀습니다.",
-        description3: "이러한 저의 이력은 소프트웨어를 설계할 때 하드웨어의 특성까지 고려할 수 있는 저만의 강력한 무기입니다. 하드웨어부터 AI 기반의 소프트웨어 시스템까지 모두 이해하는 융합형 인재로서, 기술로 다양한 문제를 해결하는 개발자가 되겠습니다.",
+        description1: "하드웨어의 특성을 깊이 이해하는 주니어 개발자입니다.",
+        description2: "서울 로봇 마이스터고에서 기계, 전자, 제어 원리를 익히며 산업 현장의 기반을 다졌고, 대학에서는 소프트웨어 컴퓨팅을 전공하며 IT 시스템과 AI 역량을 키웠습니다.",
+        description3: "이러한 '융합형' 이력은 저만의 강력한 무기입니다. 소프트웨어 설계 시 하드웨어의 제약과 특성까지 고려할 수 있기 때문입니다. 기술로 현실 세계의 문제를 해결하는 엔지니어가 되겠습니다.",
         educationTitle: "Education.",
-        education1: "서울 로봇 마이스터고 로봇 소프트웨어 2015.03 ~ 0217.02",
-        education2: "한경대학교 소프트웨어 서비스 컴퓨팅 학과 2022.03 ~ 2026.02 *졸업 예정",
+        education1: "서울 로봇 마이스터고 로봇 소프트웨어 (2015.03 ~ 2017.02)",
+        education2: "한경대학교 소프트웨어 서비스 컴퓨팅 학과 (2022.03 ~ 2026.02 *졸업 예정)",
     },
     skills: {
-        title: "Keywords:",
+        title: "Keywords",
         content: "Python | Deep Learning | Generative AI | Computer Vision | TensorFlow | Scikit-Learn | LangChain | Flask | Flutter | Pandas | YOLOv8 | RAG",
     },
     projects: {
@@ -41,7 +48,6 @@ export const ko = {
         },
     },
     nav: {
-        home: "Home",
         about: "About",
         skills: "Skills",
         projects: "Projects",

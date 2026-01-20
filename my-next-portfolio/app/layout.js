@@ -1,5 +1,5 @@
 // app/layout.js
-import './globals.css'; 
+import './globals.css';
 
 export const metadata = {
   title: '최상진의 포트폴리오',
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
         <main>{children}</main>
       </body>

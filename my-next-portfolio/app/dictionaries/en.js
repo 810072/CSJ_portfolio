@@ -1,16 +1,23 @@
 export const en = {
+    hero: {
+        greeting: "Hello, I am",
+        title: "Choi Sangjean",
+        tagline: "Software Engineer",
+        description: "From hardware principles to AI systems.\nI bridge the gap between physical computing and intelligent software.",
+        cta: "View Projects",
+    },
     about: {
-        title: "Introducing about Choi Sangjean",
+        title: "Introducing Choi Sangjean",
         subtitle: "About me.",
-        description1: "Hello. I am Choi Sangjean, a junior developer who understands the characteristics of hardware.",
-        description2: "I built a foundation in hardware and industrial fields by learning the mechanical, electronic, and control principles of robots at Seoul Robot High School. Later, I majored in Software Computing at university, where I professionally developed capabilities in IT system development, data processing, and AI model utilization.",
-        description3: "My background is my unique strength, allowing me to consider hardware characteristics when designing software. As a convergence talent who understands everything from hardware to AI-based software systems, I aspire to be a developer who solves various problems with technology.",
+        description1: "I am a junior developer with a deep understanding of hardware characteristics.",
+        description2: "I built my foundation in industrial mechanics, electronics, and control systems at Seoul Robot High School. Later, I majored in Software Computing at university to master IT systems and AI capabilities.",
+        description3: "This 'convergence' background is my unique strength. It allows me to design software while considering hardware constraints and potential. I aspire to be an engineer who solves real-world problems through technology.",
         educationTitle: "Education.",
         education1: "Seoul Robot High School, Robot Software (2015.03 ~ 2017.02)",
         education2: "Hankyong National University, Dept. of Software Service Computing (2022.03 ~ 2026.02 *Expected Graduation)",
     },
     skills: {
-        title: "Keywords:",
+        title: "Keywords",
         content: "Python | Deep Learning | Generative AI | Computer Vision | TensorFlow | Scikit-Learn | LangChain | Flask | Flutter | Pandas | YOLOv8 | RAG",
     },
     projects: {
@@ -41,7 +48,6 @@ export const en = {
         },
     },
     nav: {
-        home: "Home",
         about: "About",
         skills: "Skills",
         projects: "Projects",

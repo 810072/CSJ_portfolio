@@ -1,16 +1,23 @@
 export const ja = {
+    hero: {
+        greeting: "Hello, I am",
+        title: "Choi Sangjean",
+        tagline: "Software Engineer",
+        description: "ハードウェアの原理からAIシステムまで。\nフィジカルコンピューティングと人工知能をつなぐ開発者です。",
+        cta: "View Projects",
+    },
     about: {
-        title: "Introducing about Choi Sangjean",
+        title: "Introducing Choi Sangjean",
         subtitle: "About me.",
-        description1: "こんにちは。ハードウェアの特性を理解するジュニア開発者、チェ・サンジンです。",
-        description2: "私はソウルロボットマイスター高校でロボットの機械、電子、制御原理を学び、ハードウェアと産業現場の基盤を築きました。その後、大学でソフトウェアコンピューティングを専攻し、ITシステム開発、データ処理、そしてAIモデル活用能力を専門的に養いました。",
-        description3: "このような私の経歴は、ソフトウェアを設計する際にハードウェアの特性まで考慮できる私だけの強力な武器です。ハードウェアからAIベースのソフトウェアシステムまで全てを理解する融合型人材として、技術で様々な問題を解決する開発者になります。",
+        description1: "ハードウェアの特性を深く理解するジュニア開発者です。",
+        description2: "ソウルロボットマイスター高校で機械、電子、制御原理を学び、産業現場の基盤を築きました。その後、大学でソフトウェアコンピューティングを専攻し、ITシステムとAI能力を専門的に養いました。",
+        description3: "このような「融合型」の経歴は、私だけの強力な武器です。ソフトウェア設計時にハードウェアの制約や特性まで考慮できるからです。技術で現実世界の問題を解決するエンジニアになります。",
         educationTitle: "Education.",
-        education1: "ソウルロボットマイスター高校 ロボットソフトウェア 2015.03 ~ 2017.02",
-        education2: "ハンギョン国立大学 ソフトウェアサービスコンピューティング学科 2022.03 ~ 2026.02 *卒業予定",
+        education1: "ソウルロボットマイスター高校 ロボットソフトウェア (2015.03 ~ 2017.02)",
+        education2: "ハンギョン国立大学 ソフトウェアサービスコンピューティング学科 (2022.03 ~ 2026.02 *卒業予定)",
     },
     skills: {
-        title: "Keywords:",
+        title: "Keywords",
         content: "Python | Deep Learning | Generative AI | Computer Vision | TensorFlow | Scikit-Learn | LangChain | Flask | Flutter | Pandas | YOLOv8 | RAG",
     },
     projects: {
@@ -41,7 +48,6 @@ export const ja = {
         },
     },
     nav: {
-        home: "Home",
         about: "About",
         skills: "Skills",
         projects: "Projects",

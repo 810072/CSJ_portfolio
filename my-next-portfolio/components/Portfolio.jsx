@@ -53,18 +53,18 @@ export default function Portfolio({ dict }) {
                         variants={staggerContainer}
                     >
                         <motion.p variants={fadeInUp} style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '1.25rem', marginBottom: '16px' }}>
-                            Hello, I am
+                            {dict.hero.greeting}
                         </motion.p>
                         <motion.h1 variants={fadeInUp}>
-                            Choi Sangjean<br />
-                            <span style={{ opacity: 0.5 }}>Hardware-Aware</span><br />
-                            <span style={{ color: 'var(--primary)' }}>Software Engineer</span>
+                            {dict.hero.title}<br />
+                            <span style={{ opacity: 0.5, fontSize: '0.8em' }}>Hardware-Aware</span><br />
+                            <span style={{ color: 'var(--primary)' }}>{dict.hero.tagline}</span>
                         </motion.h1>
-                        <motion.p variants={fadeInUp} style={{ marginTop: '32px', maxWidth: '600px' }}>
-                            {dict.about.description3}
+                        <motion.p variants={fadeInUp} style={{ marginTop: '32px', maxWidth: '600px', whiteSpace: 'pre-line' }}>
+                            {dict.hero.description}
                         </motion.p>
                         <motion.div variants={fadeInUp} style={{ marginTop: '48px' }}>
-                            <a href="#projects" className="btn-primary">View Projects</a>
+                            <a href="#projects" className="btn-primary">{dict.hero.cta}</a>
                         </motion.div>
                     </motion.div>
                 </section>
@@ -80,8 +80,9 @@ export default function Portfolio({ dict }) {
                     >
                         <div>
                             <h2>{dict.about.subtitle}</h2>
-                            <p>{dict.about.description1}</p>
+                            <p style={{ fontWeight: 600, color: 'var(--text-main)', marginBottom: '16px' }}>{dict.about.description1}</p>
                             <p>{dict.about.description2}</p>
+                            <p>{dict.about.description3}</p>
                         </div>
 
                         <div className="glass-panel">
@@ -90,11 +91,11 @@ export default function Portfolio({ dict }) {
                             </h3>
                             <div style={{ marginBottom: '24px' }}>
                                 <div style={{ color: 'var(--text-main)', fontWeight: 600, marginBottom: '4px' }}>Seoul Robot High School</div>
-                                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Robot Software | 2015.03 ~ 2017.02</div>
+                                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>{dict.about.education1}</div>
                             </div>
                             <div>
                                 <div style={{ color: 'var(--text-main)', fontWeight: 600, marginBottom: '4px' }}>Hankyong National University</div>
-                                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>Dept. of Software Service Computing | 2022.03 ~ 2026.02</div>
+                                <div style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>{dict.about.education2}</div>
                             </div>
                         </div>
                     </motion.div>
