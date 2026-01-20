@@ -1,79 +1,430 @@
-html {
-  scroll-behavior: smooth; /* 부드러운 스크롤 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+:root {
+  /* Modern Dark Theme Palette */
+  --bg-dark: #0B1120;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-glass: rgba(15, 23, 42, 0.6);
+
+  --primary: #3B82F6;
+  /* Electric Blue */
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --secondary: #8B5CF6;
+  /* Soft Purple */
+  --secondary-glow: rgba(139, 92, 246, 0.5);
+  --accent: #10B981;
+  /* Emerald Green for success/active states */
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  /* Spacing System */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-2xl: 128px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-main: 'Outfit', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
 }
 
-/* 메인 컨테이너: 
-  피그마 디자인을 기반으로 중앙 정렬 및 반응형 너비를 설정합니다.
-*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Ambient Glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: -20vw;
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse-slow 10s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20vh;
+  right: -20vw;
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, var(--secondary-glow) 0%, transparent 60%);
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse-slow 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0.25;
+  }
+}
+
+/* Container */
 .main-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #FFF 0%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: var(--space-xl);
+  display: inline-block;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+  max-width: 65ch;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-panel {
+  composes: glass;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  /* Lighter background for inside nav */
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-light);
+  margin-left: var(--space-md);
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.lang-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 var(--space-lg);
+  transition: background 0.3s;
+}
+
+.navbar.scrolled {
+  background: rgba(11, 17, 32, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+/* Sections */
+.section {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+.hero-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 20px; /* 위아래, 좌우 여백 추가 */
-  width: 100%;
-  max-width: 375px; /* 모바일 기본 */
-  margin: 0 auto; /* 중앙 정렬 */
+  justify-content: center;
+  padding-top: 80px;
+  /* navbar height */
 }
 
-/* 태블릿 (피그마 800px 기준) */
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
 @media (min-width: 768px) {
-  .main-container {
-    max-width: 600px;
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 데스크탑 (피그마 1280px 기준) */
-@media (min-width: 1280px) {
-  .main-container {
-    max-width: 800px;
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* 각 섹션 스타일 (간격 조절용)
-*/
-.section {
-  width: 100%; /* 부모 컨테이너(main-container)를 꽉 채움 */
-  margin-bottom: 60px; /* 각 섹션 사이의 여백 */
-}
-
-/* 프로젝트 카드 스타일 (기본)
-  (피그마 Inspect 탭을 보고 더 꾸며주세요)
-*/
+/* Project Card Override */
 .project-card {
-  width: 100%;
-  margin-bottom: 40px; /* 프로젝트 사이 여백 */
-  border: 1px solid #eee; /* 간단한 경계선 */
-  border-radius: 8px;
-  overflow: hidden; /* 이미지 모서리 둥글게 */
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card img {
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary);
+}
+
+.project-media-container {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-media-container img,
+.project-media-container video {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.project-content {
-  padding: 20px;
+.project-card:hover .project-media-container img,
+.project-card:hover .project-media-container video {
+  transform: scale(1.05);
 }
 
-.project-content h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.project-info {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-content p {
-  font-size: 16px;
-  margin-bottom: 15px;
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: var(--space-md);
 }
 
-.keyword-tag {
-  display: inline-block;
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+.tag-pill {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Skill Card */
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-light);
+  transform: scale(1.02);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--primary);
+}
+
+/* Responsive Utils */
+@media (max-width: 640px) {
+  :root {
+    --space-lg: 24px;
+    --space-xl: 40px;
+    --space-2xl: 80px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    padding: 0 var(--space-md);
+  }
 }
